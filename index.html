@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Polytopia — Tiny Tribes</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="game-canvas"></canvas>
+
+<!-- Main menu -->
+<div id="menu-screen" class="screen">
+  <div class="menu-box">
+    <h1>TINY TRIBES</h1>
+    <p class="subtitle">A turn-based strategy game of exploration &amp; conquest</p>
+
+    <div class="menu-row">
+      <label>Map size</label>
+      <div class="btn-group" id="map-size-group">
+        <button data-size="14">Small</button>
+        <button data-size="16" class="active">Normal</button>
+        <button data-size="20">Large</button>
+      </div>
+    </div>
+
+    <div class="menu-row">
+      <label>Seed</label>
+      <input id="seed-input" type="text" placeholder="random">
+    </div>
+
+    <div id="player-slots"></div>
+
+    <button id="start-btn" class="big-btn">Start Game</button>
+    <p class="hint">Move units, harvest resources, research tech, capture every enemy capital.</p>
+  </div>
+</div>
+
+<!-- In-game HUD -->
+<div id="hud" class="hidden">
+  <div id="top-bar">
+    <div id="turn-info"></div>
+    <div id="player-info"></div>
+    <div id="star-info"></div>
+    <div class="top-actions">
+      <button id="tech-btn">Tech</button>
+      <button id="end-turn-btn">End Turn</button>
+    </div>
+  </div>
+  <div id="notifications"></div>
+  <div id="action-panel" class="hidden"></div>
+</div>
+
+<!-- Tech tree modal -->
+<div id="tech-modal" class="modal hidden">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h2>Technology</h2>
+      <button class="close-btn" id="tech-close">✕</button>
+    </div>
+    <div id="tech-tree"></div>
+  </div>
+</div>
+
+<!-- End of game -->
+<div id="end-screen" class="screen hidden">
+  <div class="menu-box">
+    <h1 id="end-title"></h1>
+    <p id="end-detail"></p>
+    <div id="end-scores"></div>
+    <button id="again-btn" class="big-btn">Play Again</button>
+  </div>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
